@@ -1,0 +1,71 @@
+.padding-0{
+    padding-right:0;
+    padding-left:0;
+}
+
+.info-box-style{
+    display: block;
+    min-height: 90px;
+    background: #fff;
+     width: 20%; 
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    margin-bottom: 15px;
+    background-color:#f5f5f5;
+}
+
+@media (min-width: 992px)
+{
+    .col{
+        width:20% !important;
+    }
+}
+
+.info-box-number{
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 20%;
+    font-weight: 100;
+    font-size: 16px;
+}
+
+.info-box-text-meeting{
+    font-weight: 500;
+    text-transform: none;
+    font-size: 16px;
+}
+.info-box-data{
+    display: block;
+    font-weight: 100;
+    font-size: 14px;
+    color: grey;
+    margin-top: 8px;
+}
+.info-box-image-text {
+    padding: 10px 10px;
+    margin-left: 55px;
+}
+.end_time{
+    position: absolute;
+    margin-top: -5%;
+    margin-left: 53%;
+}
+.start_time{
+    position: absolute;
+    margin-top: 3.5%;
+    margin-left: 10%;
+}
+.inner-addon { 
+    position: relative; 
+    width: 40%;
+    margin-top: 10%;
+    margin-left: 31%;
+    outline: none;
+}
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+.right-addon .glyphicon { right: 0px;}
+.right-addon input { padding-right: 30px; }
