@@ -9,6 +9,8 @@ class ChatBox extends Component {
       }
     }
   }
+
+//   Convert sec's to Time
   getTime = (duration) =>{
     duration = Number(duration);
     var h = Math.floor(duration / 3600);
@@ -19,6 +21,8 @@ class ChatBox extends Component {
     var ss = (s === 0)?"00":s;
     return hh + ":" + mm + ":" + ss; 
   }
+
+//   Render function will loop over all chats and create a chat box with these chats
   render() {
       var self = this;
       var chats = [];

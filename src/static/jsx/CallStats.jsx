@@ -8,7 +8,9 @@ class CallStats extends Component {
       stats:""
     };
   }
+
   componentDidMount = () =>{
+    // Api to fetch call related stats
     var self = this;
     request.get('http://demo5670791.mockable.io/stats')
       .end(function (err, res) {
@@ -20,6 +22,7 @@ class CallStats extends Component {
       self.setState({stats:data});
     });
   }
+
   render() {
     return (
       <div className = "row row-centered" style={{width:"100%",paddingLeft:"10%",paddingRight:"15px"}}>

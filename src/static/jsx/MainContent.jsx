@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import CallStats from './CallStats.jsx';
 import ChatBox from './ChatBox.jsx';
-import WaveSurfer from 'wavesurfer.js';
 import request from "superagent";
+import WaveSurfer from 'wavesurfer.js';
 import TimelinePlugin from 'wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js';
 import MinimapPlugin from 'wavesurfer.js/dist/plugin/wavesurfer.minimap.min.js';
 
@@ -21,6 +21,8 @@ class MainContent extends Component {
       value:""
     };
   }
+
+  // This function will convert sec's into Time
   getTime = (duration) =>{
     duration = Number(duration);
     var h = Math.floor(duration / 3600);
@@ -31,6 +33,7 @@ class MainContent extends Component {
     var ss = (s === 0)?"00":s;
     return hh + ":" + mm + ":" + ss; 
   }
+
   //  componentDidMount Will be called only once when component is loaded.
   componentDidMount = () =>{
     var self = this;
@@ -39,6 +42,7 @@ class MainContent extends Component {
         waveColor: 'violet',
         progressColor: 'purple'
     });
+    // Loading Audio file.
     this.wavesurfer.load('http://localhost:8000/api/audio');
     // this.wavesurfer.loadBlob("../media/videoplayback.mp3");
     this.wavesurfer.on('ready', function () {
@@ -67,6 +71,7 @@ class MainContent extends Component {
       self.setState({chat:data,chatData:data});
     });
   }
+
   //  Function to Pause or Play Audio File.
   pausePlay = () =>{
     //  Looking for current action
@@ -79,14 +84,17 @@ class MainContent extends Component {
       this.setState({action:"fa fa-pause"});
     }
   }
+
   // Function to move forward on audio track by 15 secs.
   handleForward = () =>{
     this.wavesurfer.skipForward(15);
   }
+
   // Function to move back on audio track by 15 secs.
   handleBack = () =>{
     this.wavesurfer.skipBackward(15);
   }
+  // Handle The change in value of textbox to filter messages in ChatBox
   handleChange = (e) =>{
     if(e.target.value === ""){
       this.setState({value:e.target.value,chatData:this.state.chat});
@@ -101,6 +109,8 @@ class MainContent extends Component {
       this.setState({value:e.target.value,chatData:chatNew});
     }
   }
+
+  // Render function
   render() {
     return (
       <div className="content-wrapper" style={{height: "100%",minHeight: "100%",background:"white"}}>
@@ -112,7 +122,6 @@ class MainContent extends Component {
         <section className="content container-fluid">
           <CallStats />
           <div className="callAnalysis">
-
             <div className="player" style={{margin:" 0 auto",width: "70%"}}>
               <div className="start_time">
                 {this.state.timer}
