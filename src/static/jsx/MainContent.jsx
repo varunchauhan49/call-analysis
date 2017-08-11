@@ -39,7 +39,7 @@ class MainContent extends Component {
         waveColor: 'violet',
         progressColor: 'purple'
     });
-    this.wavesurfer.load('https://s3.ap-south-1.amazonaws.com/observeai/videoplayback.mp3');
+    this.wavesurfer.load('http://localhost:8000/api/audio');
     // this.wavesurfer.loadBlob("../media/videoplayback.mp3");
     this.wavesurfer.on('ready', function () {
         self.setState({duration:self.wavesurfer.getDuration()})

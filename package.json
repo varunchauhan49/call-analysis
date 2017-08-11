@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.15.4",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "superagent": "^3.5.2",
@@ -15,6 +18,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prod": "node server.js"
   }
 }
